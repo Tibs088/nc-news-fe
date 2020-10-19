@@ -1,7 +1,15 @@
-import { Component } from 'react';
+import React from 'react';
+import { Link } from '@reach/router'
 
-class Navi_Bar extends Component {
-  state = {
+class NavBar extends React.Component {
 
+  render() {
+    return (
+      <Link to='/topics' >
+        <button>Topics</button>
+      </Link>
+    )
   }
 }
+
+export default NavBar;
