@@ -1,5 +1,9 @@
 import React from 'react';
-import axios from 'axios';
+import Card from '@material-ui/core/Card';
+import { getAllTopics } from '../utils/Get_Requests';
+
+//styles
+import '../styles/Cards_Style.css'
 
 
 class TopicsPage extends React.Component {
@@ -9,7 +13,7 @@ class TopicsPage extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('https://matts-nc-news-api.herokuapp.com/api/topics').then(({ data: { topics } }) => {
+    getAllTopics().then(({ data: { topics } }) => {
       this.setState({ topics, isLoading: false })
     })
   }
@@ -23,16 +27,15 @@ class TopicsPage extends React.Component {
       )
     } else {
       return (
-        <div>
-          <h2>Topics</h2>
-          <ol className="list-of-topics">
-            {topics.map(topic => {
-              num++
-              return (
-                <li key={num}>{topic.slug}</li>
-              )
-            })}
-          </ol>
+        <div id='card-container'>
+          {topics.map(topic => {
+            num++
+            return (
+              <Card key={num} className='card'>
+                <h3>{topic.slug}</h3>
+              </Card>
+            )
+          })}
         </div>
       )
     }
