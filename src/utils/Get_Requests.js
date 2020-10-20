@@ -12,7 +12,11 @@ export const getAllTopics = () => {
 
 // The base get request for going to the standard articles page
 export const getArticles = (query) => {
-  return instance.get(`/articles?topic=${query}`)
+  if (!query) {
+    return instance.get('/articles')
+  } else {
+    return instance.get(`/articles?topic=${query}`)
+  }
 }
 
 export const getArticleById = (id) => {

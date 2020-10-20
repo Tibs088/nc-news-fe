@@ -27,7 +27,7 @@ export default function TopicsCard(props) {
 
   return (
     <Card className={classes.root}>
-      <Link to={`/articles${props.topics.slug}`}>
+      <Link to={`/articles/${props.topics.slug}`}>
         <CardActionArea>
           <CardMedia
             component="img"

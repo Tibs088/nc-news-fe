@@ -21,7 +21,11 @@ class ArticlePage extends React.Component {
       )
     } else {
       return (
-        <h2>{article.title}</h2>
+        <div>
+          <h2>{article.title}</h2>
+          <h3>By {article.author}</h3>
+          <p>{article.body}</p>
+        </div>
       )
     }
   }

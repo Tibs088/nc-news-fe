@@ -7,14 +7,20 @@ class ArticlesPage extends React.Component {
     articles: [],
     isLoading: true
   }
-
   componentDidMount() {
-    getArticles(this.props.articlesby).then(({ data: { articles } }) => {
-      this.setState({ articles, isLoading: false })
-    })
+    if (!this.props.articlesby) {
+      getArticles().then(({ data: { articles } }) => {
+        this.setState({ articles, isLoading: false })
+      })
+    } else {
+      getArticles(this.props.articlesby).then(({ data: { articles } }) => {
+        this.setState({ articles, isLoading: false })
+      })
+    }
   }
 
   render() {
+    console.log(this.props.articlesby)
     const { articles, isLoading } = this.state;
     if (isLoading) {
       return (

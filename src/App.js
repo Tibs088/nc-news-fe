@@ -20,6 +20,7 @@ function App() {
           <HomePage path='/' />
           <TopicsPage path='/topics' />
           <ArticlesPage path='/articles/:articlesby' />
+          <ArticlesPage path='/articles' />
           <ArticlePage path='/articles/article/:article_id' />
         </Router>
       </div>
