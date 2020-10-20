@@ -22,7 +22,7 @@ class TopicsPage extends React.Component {
     const { topics, isLoading } = this.state;
     if (isLoading) {
       return (
-        <p>Loading..</p>
+        <p>Loading...</p>
       )
     } else {
       return (

@@ -9,7 +9,7 @@ class NavBar extends React.Component {
         <Link to='/topics' >
           <button>Topics</button>
         </Link>
-        <Link to='/articles' >
+        <Link to='/articles' query=''>
           <button>Articles</button>
         </Link>
       </div>

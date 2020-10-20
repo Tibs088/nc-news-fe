@@ -18,7 +18,7 @@ function App() {
         <Router>
           <HomePage path='/' />
           <TopicsPage path='/topics' />
-          <ArticlesPage path='/articles' />
+          <ArticlesPage path='/articles/:artby' />
         </Router>
       </div>
     </div>

@@ -5,6 +5,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from '@reach/router'
 
 const useStyles = makeStyles({
   root: {
@@ -26,19 +27,21 @@ export default function TopicsCard(props) {
 
   return (
     <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          image={imgLinks[props.topics.slug]}
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <h3>{props.topics.slug}</h3>
-          <p>{props.topics.description}</p>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-      </CardActions>
+      <Link to={`/articles/${props.topics.slug}`}>
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            image={imgLinks[props.topics.slug]}
+            title="Contemplative Reptile"
+          />
+          <CardContent>
+            <h3>{props.topics.slug}</h3>
+            <p>{props.topics.description}</p>
+          </CardContent>
+        </CardActionArea>
+        <CardActions>
+        </CardActions>
+      </Link>
     </Card>
   )
 }

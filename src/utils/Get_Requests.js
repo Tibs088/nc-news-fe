@@ -9,3 +9,8 @@ export const getAllTopics = () => {
   return instance
     .get('/topics')
 }
+
+// The base get request for going to the standard articles page
+export const getArticles = (query) => {
+  return instance.get(`/articles/?topic=${query}`)
+}
