@@ -5,9 +5,14 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <Link to='/topics' >
-        <button>Topics</button>
-      </Link>
+      <div>
+        <Link to='/topics' >
+          <button>Topics</button>
+        </Link>
+        <Link to='/articles' >
+          <button>Articles</button>
+        </Link>
+      </div>
     )
   }
 }
