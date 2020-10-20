@@ -9,8 +9,7 @@ class ArticlesPage extends React.Component {
   }
 
   componentDidMount() {
-
-    getArticles(this.props.artby).then(({ data: { articles } }) => {
+    getArticles(this.props.articlesby).then(({ data: { articles } }) => {
       this.setState({ articles, isLoading: false })
     })
   }

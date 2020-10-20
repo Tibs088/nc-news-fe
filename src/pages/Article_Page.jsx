@@ -8,7 +8,7 @@ class ArticlePage extends React.Component {
   }
 
   componentDidMount() {
-    getArticleById(6).then(({ data: article }) => {
+    getArticleById(this.props.article_id).then(({ data: article }) => {
       this.setState({ article, isLoading: false })
     })
   }

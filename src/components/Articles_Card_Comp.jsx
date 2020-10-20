@@ -5,6 +5,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import Avatar from '@material-ui/core/Avatar';
 import { red } from '@material-ui/core/colors';
+import { Link } from '@reach/router';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -34,17 +35,19 @@ export default function ArticlesCard(props) {
   const classes = useStyles();
   return (
     <Card className={classes.root}>
-      <CardActionArea>
-        <CardHeader
-          avatar={
-            <Avatar aria-label="user" className={classes.avatar}>
-              {props.article.author[0]}
-            </Avatar>
-          }
-          title={props.article.title}
-          subheader={props.article.created_at}
-        />
-      </CardActionArea>
+      <Link to={`/articles/article/${props.article.article_id}`}>
+        <CardActionArea>
+          <CardHeader
+            avatar={
+              <Avatar aria-label="user" className={classes.avatar}>
+                {props.article.author[0]}
+              </Avatar>
+            }
+            title={props.article.title}
+            subheader={props.article.created_at}
+          />
+        </CardActionArea>
+      </Link>
     </Card>
   );
 }
