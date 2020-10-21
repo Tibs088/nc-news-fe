@@ -9,7 +9,7 @@ import TopicsCard from '../components/Topics_Card_Comp';
 class TopicsPage extends React.Component {
   state = {
     topics: [],
-    isLoading: true
+    isLoading: true,
   }
 
   componentDidMount() {

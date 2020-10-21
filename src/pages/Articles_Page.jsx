@@ -5,7 +5,8 @@ import { getArticles } from '../utils/Get_Requests';
 class ArticlesPage extends React.Component {
   state = {
     articles: [],
-    isLoading: true
+    isLoading: true,
+    user: []
   }
 
   componentDidMount() {

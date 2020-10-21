@@ -23,3 +23,11 @@ export const getArticles = (query) => {
 export const getArticleById = (id) => {
   return instance.get(`/articles/${id}`)
 }
+
+export const getIndivdualUser = (username) => {
+  return instance.get(`/users/${username}`)
+}
+
+export const getCommentsOnArticle = (article_id) => {
+  return instance.get(`/articles/${article_id}/comments`)
+}

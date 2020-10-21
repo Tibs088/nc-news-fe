@@ -37,21 +37,19 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ArticlesCard(props) {
   const classes = useStyles();
+
   return (
-    <Card className={classes.root} id='article'>
+    < Card className={classes.root} id='article' >
       <Link to={`/articles/article/${props.article.article_id}`}>
         <CardActionArea>
           <CardHeader
             avatar={
-              <Avatar aria-label="user" className={classes.avatar}>
-                {props.article.author[0]}
-              </Avatar>
-            }
+              <Avatar aria-label="user" className={classes.avatar} />}
             title={props.article.title}
             subheader={props.article.created_at}
           />
         </CardActionArea>
       </Link>
-    </Card>
+    </Card >
   );
 }
