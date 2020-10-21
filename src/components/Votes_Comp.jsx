@@ -3,7 +3,6 @@ import axios from 'axios';
 
 export const Votes = ({ votes, article_id }) => {
   const handleVote = (voteValue) => {
-    console.log(voteValue);
     axios.patch(`https://matts-nc-news-api.herokuapp.com/api/articles/${article_id}`, { inc_votes: voteValue });
   }
 

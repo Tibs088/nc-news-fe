@@ -1,5 +1,6 @@
 import React from 'react';
 import { getArticleById, getCommentsOnArticle } from '../utils/Get_Requests'
+import { CommentField } from '../components/New_Comment_Comp.jsx'
 
 class ArticlePage extends React.Component {
   state = {
@@ -34,6 +35,7 @@ class ArticlePage extends React.Component {
               return <li key={comment.comment_id}>{comment.body}</li>
             })}
           </ol>
+          <CommentField />
         </div>
       )
     }
