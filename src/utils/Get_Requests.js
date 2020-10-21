@@ -19,6 +19,7 @@ export const getArticles = (query) => {
   }
 }
 
+//Get individual articles based on their id
 export const getArticleById = (id) => {
   return instance.get(`/articles/${id}`)
 }

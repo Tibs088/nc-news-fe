@@ -7,10 +7,16 @@ h3 {
   text-align: center;
 }
 
-.card-container {
+#card-container {
   display: flex;
+  padding: 15px;
+  /* border: solid 2px salmon; */
   flex-wrap: wrap;
   flex-direction: row;
-  padding: 5% 10%;
-  margin: 10px;
+}
+
+#card {
+  padding: 2px; 
+  margin: 15px; 
+  width: 500px;
 }

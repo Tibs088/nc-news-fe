@@ -7,6 +7,7 @@ class ArticlesPage extends React.Component {
     articles: [],
     isLoading: true
   }
+
   componentDidMount() {
     if (!this.props.articlesby) {
       getArticles().then(({ data: { articles } }) => {
@@ -20,7 +21,6 @@ class ArticlesPage extends React.Component {
   }
 
   render() {
-    console.log(this.props.articlesby)
     const { articles, isLoading } = this.state;
     if (isLoading) {
       return (

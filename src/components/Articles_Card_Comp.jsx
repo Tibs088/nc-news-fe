@@ -1,11 +1,15 @@
+//React Stuff
 import React from 'react';
+import { Link } from '@reach/router';
+//Material UI For the Cards
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import Avatar from '@material-ui/core/Avatar';
 import { red } from '@material-ui/core/colors';
-import { Link } from '@reach/router';
+//Styles
+import '../styles/Articles_Styles.css'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -34,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
 export default function ArticlesCard(props) {
   const classes = useStyles();
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} id='article'>
       <Link to={`/articles/article/${props.article.article_id}`}>
         <CardActionArea>
           <CardHeader
