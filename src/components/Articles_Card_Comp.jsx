@@ -5,11 +5,13 @@ import { Link } from '@reach/router';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
+import CardContent from '@material-ui/core/CardContent';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import Avatar from '@material-ui/core/Avatar';
 import { red } from '@material-ui/core/colors';
 //Styles
 import '../styles/Articles_Styles.css'
+import { Votes } from './Votes_Comp';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -50,6 +52,9 @@ export default function ArticlesCard(props) {
           />
         </CardActionArea>
       </Link>
+      <CardContent>
+        <Votes votes={props.article.votes} article_id={props.article.article_id} />
+      </CardContent>
     </Card >
   );
 }
