@@ -12,7 +12,7 @@ const options = [
 
 const ITEM_HEIGHT = 40;
 
-const Nav_Bar = () => {
+const NavBar = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
@@ -58,4 +58,4 @@ const Nav_Bar = () => {
   )
 }
 
-export default Nav_Bar;
+export default NavBar;

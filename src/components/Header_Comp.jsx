@@ -1,7 +1,7 @@
 import { Link } from '@reach/router';
 import React from 'react';
 import '../styles/Header_Style.css'
-import Nav_Bar from './Nav_Bar_Comp';
+import NavBar from './Nav_Bar_Comp';
 
 const Header = () => {
 
@@ -11,7 +11,7 @@ const Header = () => {
         <h1 className="Title">Northcoders News</h1>
       </Link>
       <div className='Navigation'>
-        <Nav_Bar />
+        <NavBar />
       </div>
     </div>
   )
