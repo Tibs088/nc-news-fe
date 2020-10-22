@@ -1,20 +1,61 @@
 import React from 'react';
-import { Link } from '@reach/router'
+import IconButton from '@material-ui/core/IconButton';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { Link } from '@reach/router';
 
-class NavBar extends React.Component {
+const options = [
+  'topics',
+  'articles'
+]
 
-  render() {
-    return (
-      <div>
-        <Link to='/topics' >
-          <button>Topics</button>
-        </Link>
-        <Link to='/articles' query=''>
-          <button>Articles</button>
-        </Link>
-      </div>
-    )
-  }
+const ITEM_HEIGHT = 40;
+
+const Nav_Bar = () => {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  return (
+    <div>
+      <IconButton
+        aria-label="more"
+        aria-controls="long-menu"
+        aria-haspopup="true"
+        onClick={handleClick}>
+        <MoreVertIcon />
+      </IconButton>
+      <Menu
+        id='long-menu'
+        anchorEl={anchorEl}
+        keepMounted
+        open={open}
+        onClose={handleClose}
+        PaperProps={{
+          style: {
+            maxHeight: ITEM_HEIGHT * 4.5,
+            width: '20ch',
+          },
+        }}>
+        {options.map((option) => {
+          return (
+            <Link to={`/${option}`}>
+              <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
+                {option}
+              </MenuItem>
+            </Link>)
+        })}
+      </Menu>
+    </div>
+  )
 }
 
-export default NavBar;
+export default Nav_Bar;
