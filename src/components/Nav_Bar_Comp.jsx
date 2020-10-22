@@ -47,7 +47,7 @@ const NavBar = () => {
         }}>
         {options.map((option) => {
           return (
-            <Link to={`/${option}`}>
+            <Link to={`/${option}`} key={option}>
               <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
                 {option}
               </MenuItem>

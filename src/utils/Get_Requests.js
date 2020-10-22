@@ -28,6 +28,10 @@ export const getIndivdualUser = (username) => {
   return instance.get(`/users/${username}`)
 }
 
+export const getUsersArticles = (username) => {
+  return instance.get(`/articles?authro=${username}`)
+}
+
 export const getCommentsOnArticle = (article_id) => {
   return instance.get(`/articles/${article_id}/comments`)
 }
