@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '@reach/router'
 import { getArticleById, getCommentsOnArticle } from '../utils/Get_Requests'
 import { Comments } from '../components/Comments_Component.jsx'
 
@@ -28,7 +29,9 @@ class ArticlePage extends React.Component {
       return (
         <div>
           <h2>{article.title}</h2>
-          <h3>By {article.author}</h3>
+          <Link to={`/user/${article.author}`}>
+            <h3 author={article.author}>By {article.author}</h3>
+          </Link>
           <p>{article.body}</p>
           <Comments comments={comments} />
         </div>

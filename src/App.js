@@ -8,6 +8,7 @@ import HomePage from './pages/Home_Page';
 import TopicsPage from './pages/Topics_Page';
 import ArticlesPage from './pages/Articles_Page';
 import ArticlePage from './pages/Article_Page';
+import ProfilePage from './pages/Profile_Page';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <ArticlesPage path='/articles/:articlesby' />
           <ArticlesPage path='/articles' />
           <ArticlePage path='/articles/article/:article_id' />
+          <ProfilePage path='/user/:username' />
         </Router>
       </div>
     </div>
