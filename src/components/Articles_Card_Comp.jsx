@@ -53,7 +53,7 @@ export default function ArticlesCard(props) {
         </CardActionArea>
       </Link>
       <CardContent>
-        <Votes votes={props.article.votes} article_id={props.article.article_id} />
+        <Votes votes={props.article.votes} query={`articles/${props.article.article_id}`} />
       </CardContent>
     </Card >
   );

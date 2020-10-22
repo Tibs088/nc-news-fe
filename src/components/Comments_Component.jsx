@@ -50,7 +50,7 @@ export const Comments = (props) => {
             />
             <CardContent>
               <p>{comment.body}</p>
-              <Votes></Votes>
+              <Votes votes={comment.votes} query={`comments/${comment.comment_id}`} />
             </CardContent>
           </Card>
         )
