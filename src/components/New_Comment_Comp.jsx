@@ -14,10 +14,6 @@ const useStyles = makeStyles((theme) => ({
 export const CommentField = () => {
   const classes = useStyles();
 
-  const postComment = (comment) => {
-
-  }
-
   return (
     <form className={classes.root} noValidate autoComplete='off'>
       <div>
@@ -29,7 +25,7 @@ export const CommentField = () => {
           defaultValue="Default Value"
           variant="outlined"
         />
-        <button onClick={() => postComment()}>Post</button>
+        <button>Post</button>
       </div>
     </form>
   )

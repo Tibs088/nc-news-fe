@@ -1,6 +1,6 @@
 import React from 'react';
 import { getArticleById, getCommentsOnArticle } from '../utils/Get_Requests'
-import { CommentField } from '../components/New_Comment_Comp.jsx'
+import { Comments } from '../components/Comments_Component.jsx'
 
 class ArticlePage extends React.Component {
   state = {
@@ -30,12 +30,7 @@ class ArticlePage extends React.Component {
           <h2>{article.title}</h2>
           <h3>By {article.author}</h3>
           <p>{article.body}</p>
-          <ol>
-            {comments.map(comment => {
-              return <li key={comment.comment_id}>{comment.body}</li>
-            })}
-          </ol>
-          <CommentField />
+          <Comments comments={comments} />
         </div>
       )
     }
@@ -43,8 +38,5 @@ class ArticlePage extends React.Component {
 
 
 }
-
-
-
 
 export default ArticlePage;
