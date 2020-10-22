@@ -11,16 +11,12 @@ class ArticlePage extends React.Component {
   }
 
   componentDidMount() {
-    getArticleById(this.props.article_id).then(({ data: article }) => {
-      this.setState({ article })
-      getCommentsOnArticle(this.props.article_id).then(({ data: comments }) => {
-        this.setState({ comments, isLoading: false })
-      })
+    Promise.all([getArticleById(this.props.article_id), getCommentsOnArticle(this.props.article_id)]).then(responses => {
+      this.setState({ article: responses[0].data.article, comments: responses[1].data.comments, isLoading: false })
     })
   }
   render() {
-    const { article: { article }, comments: { comments }, isLoading } = this.state;
-
+    const { article, comments, isLoading } = this.state;
     if (isLoading) {
       return (
         <p>Loading...</p>
