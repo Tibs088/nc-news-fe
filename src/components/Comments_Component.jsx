@@ -11,6 +11,8 @@ import Avatar from '@material-ui/core/Avatar';
 import { red } from '@material-ui/core/colors';
 //Components 
 import { Votes } from './Votes_Comp';
+//styles
+import '../styles/Cards_Style.css'
 
 //Styles for material-ui
 const useStyles = makeStyles((theme) => ({
@@ -40,19 +42,21 @@ export const Comments = (props) => {
   const classes = useStyles();
 
   return (
-    <div>
+    <div id='card-container'>
       {/* Map over the comments and return a card with various data from those comments */}
       {props.comments.map(comment => {
         return (
           // Top level of card, the viusal holder for the comments individually
           <Card key={comment.comment_id} className={classes.root} id='comment'>
             {/* Card Header holds the details about the user who wrote the comment and when they commented */}
-            <CardHeader
-              avatar={
-                <Avatar aria-label="user" className={classes.avatar} />}
-              title={comment.author}
-              subheader={comment.created_at}
-            />
+            <Link to={`/user/${comment.author}`}>
+              <CardHeader
+                avatar={
+                  <Avatar aria-label="user" className={classes.avatar} />}
+                title={comment.author}
+                subheader={comment.created_at}
+              />
+            </Link>
             {/* Card content holds the comments body as well as the voting component */}
             <CardContent>
               <p>{comment.body}</p>

@@ -1,6 +1,6 @@
 import React from 'react';
 import ArticlesCard from '../components/Articles_Card_Comp';
-import { getArticles } from '../utils/Get_Requests';
+import { getArticles, getIndivdualUser } from '../utils/Get_Requests';
 
 class ArticlesPage extends React.Component {
   state = {
