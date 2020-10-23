@@ -11,6 +11,7 @@ import Avatar from '@material-ui/core/Avatar';
 import { red } from '@material-ui/core/colors';
 //Styles
 import '../styles/Articles_Styles.css'
+//Components
 import { Votes } from './Votes_Comp';
 
 
@@ -41,9 +42,12 @@ export default function ArticlesCard(props) {
   const classes = useStyles();
 
   return (
+    // The Card holds the article information so the user knows that they're going to before they go to it
     < Card className={classes.root} id='article' >
+      {/* Links to the article via the provided article id */}
       <Link to={`/articles/article/${props.article.article_id}`}>
         <CardActionArea>
+          {/* Shows detail about the article and the user */}
           <CardHeader
             avatar={
               <Avatar aria-label="user" className={classes.avatar} />}
@@ -53,6 +57,7 @@ export default function ArticlesCard(props) {
         </CardActionArea>
       </Link>
       <CardContent>
+        {/* holds the voting component */}
         <Votes votes={props.article.votes} query={`articles/${props.article.article_id}`} />
       </CardContent>
     </Card >

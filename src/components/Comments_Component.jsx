@@ -9,8 +9,10 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import Avatar from '@material-ui/core/Avatar';
 import { red } from '@material-ui/core/colors';
+//Components 
 import { Votes } from './Votes_Comp';
 
+//Styles for material-ui
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
@@ -39,37 +41,26 @@ export const Comments = (props) => {
 
   return (
     <div>
+      {/* Map over the comments and return a card with various data from those comments */}
       {props.comments.map(comment => {
         return (
+          // Top level of card, the viusal holder for the comments individually
           <Card key={comment.comment_id} className={classes.root} id='comment'>
+            {/* Card Header holds the details about the user who wrote the comment and when they commented */}
             <CardHeader
               avatar={
                 <Avatar aria-label="user" className={classes.avatar} />}
               title={comment.author}
               subheader={comment.created_at}
             />
+            {/* Card content holds the comments body as well as the voting component */}
             <CardContent>
               <p>{comment.body}</p>
               <Votes votes={comment.votes} query={`comments/${comment.comment_id}`} />
             </CardContent>
           </Card>
         )
-        // <li key={comment.comment_id}>
-        //   <h4>{comment.author}</h4>
-        //   <p>{comment.body}</p>
-        //   <p>{comment.votes}</p>
-        //   <p>{comment.created_at}</p>
-        // </li>
       })}
     </div>
   )
 }
-
-
-//   < ol >
-// {
-//   comments.map(comment => {
-//     return <li key={comment.comment_id}>{comment.body}</li>
-//   })
-// }
-//           </ol >

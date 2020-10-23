@@ -1,10 +1,13 @@
+//
 import React from 'react';
-import axios from 'axios';
+//utils
+import { patchVotes } from '../utils/Patch_Requests.js'
 
 export const Votes = ({ votes, query }) => {
+  // Increment the votes on the API side using a patch request 
   const handleVote = (voteValue) => {
-    axios.patch(`https://matts-nc-news-api.herokuapp.com/api/${query}`, { inc_votes: voteValue }).then(() => {
-      votes++;
+    patchVotes(query, voteValue).then(() => {
+      console.log('Work on this!')
     });
   }
 
