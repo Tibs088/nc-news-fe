@@ -30,7 +30,9 @@ class ProfilePage extends React.Component {
         <div>
           <h2>{user.username}</h2>
           {articles.map(article => {
-            return <p>{article.title}</p>
+            return (
+              <ArticlesCard key={article.article_id} article={article} />
+            )
           })}
         </div>
       )
