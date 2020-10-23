@@ -13,6 +13,8 @@ import { red } from '@material-ui/core/colors';
 import { Votes } from './Votes_Comp';
 //styles
 import '../styles/Cards_Style.css'
+//Utils
+import { deleteBadComment } from '../utils/Delete_Requests'
 
 //Styles for material-ui
 const useStyles = makeStyles((theme) => ({
@@ -41,6 +43,12 @@ const useStyles = makeStyles((theme) => ({
 export const Comments = (props) => {
   const classes = useStyles();
 
+  const handleDelete = (comment_id) => {
+    deleteBadComment(comment_id).then((res) => {
+      console.log(res);
+    })
+  }
+
   return (
     <div id='card-container'>
       {/* Map over the comments and return a card with various data from those comments */}
@@ -61,7 +69,11 @@ export const Comments = (props) => {
             <CardContent>
               <p>{comment.body}</p>
               <Votes votes={comment.votes} query={`comments/${comment.comment_id}`} />
+              <button onClick={() => handleDelete(comment.comment_id)}>
+                Delete Comment
+              </button>
             </CardContent>
+
           </Card>
         )
       })}
